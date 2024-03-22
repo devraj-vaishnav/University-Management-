@@ -5,10 +5,12 @@
 
 <head>
     <meta charset="UTF-8">
-   
+    <meta name="description" content="">
+
+    <!-- Title -->
     <title>Chat-App Admin</title>
 
- 
+    <!-- Favicon -->
 <link rel="icon" href="{{asset('asset/img/core-img/favicon.png')}}">
 
     <link rel="stylesheet" href="{{asset('asset/style.css')}}">
