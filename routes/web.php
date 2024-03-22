@@ -19,10 +19,10 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
-Auth::routes();
-Route::middleware('auth')->group(function(){
-
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('admin/profile/index',[ProfileController::class,'index'])->name('index');
-
+Auth::routes();Route::group(['middleware' => ['role:admin', 'auth']], function () {
+    Route::get('admin', [HomeController::class, 'admin'])->name('admin');
+ 
+});
+Route::group(['middleware' => ['role:user', 'auth']], function () {
+    Route::get('user', [HomeController::class, 'user'])->name('user');
 });

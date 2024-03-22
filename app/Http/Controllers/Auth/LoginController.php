@@ -39,11 +39,12 @@ class LoginController extends Controller
     }
     public function authenticated(Request $request ,$user){
 
-        if($user->hashRole('admin')){
-            return redirect('admin/index');
+       
+        if($user->hasRole('admin')){
+            return redirect('admin');
         } 
-        else if($user->hashRole('shop')){
-            return redirect('user/index');
+        else if($user->hasRole('user')){
+            return redirect('user');
         }
     }
 }
