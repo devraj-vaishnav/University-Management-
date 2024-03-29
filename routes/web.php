@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\admin\profileContoller;
+use App\Http\Controllers\admin\DaskBoardController;
+use App\Http\Controllers\user\DaskBoardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,10 +22,10 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
-Auth::routes();
-Route::middleware('auth')->group(function(){
+Auth::routes();Route::group(['middleware' => ['role:admin', 'auth']], function () {
+    Route::get('admin', [DaskBoardController::class, 'admin'])->name('admin');
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('admin/profile/index',[ProfileController::class,'index'])->name('index');
-
+});
+Route::group(['middleware' => ['role:user', 'auth']], function () {
+    Route::get('user', [HomeController::class, 'user'])->name('user');
 });
