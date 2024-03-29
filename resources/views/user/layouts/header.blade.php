@@ -214,8 +214,6 @@
                                         <span class="menu-title">Dashboard</span>
                                     </a>
                                 </li>
-                                
-
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
                                         <svg id="icon-home-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell link-icon">
@@ -231,7 +229,7 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li class="nav-item mega-menu">
+                                {{-- <li class="nav-item mega-menu">
                                     <a href="#" class="nav-link">
                                         <svg id="icon-home-13" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book link-icon">
                                             <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
@@ -275,7 +273,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
                     </nav>
