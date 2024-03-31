@@ -8,7 +8,7 @@
     <meta name="description" content="">
 
     <!-- Title -->
-    <title>University Admin</title>
+    <title>@yield('tital')</title>
 
     <!-- Favicon -->
 <link rel="icon" href="{{asset('asset/img/core-img/favicon.png')}}">

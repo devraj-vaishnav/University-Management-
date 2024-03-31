@@ -1,5 +1,5 @@
 @extends('admin/layouts/app')
-
+@section('tital', 'Daskboard ')
 @section('main')
 
     <div class="main-panel">

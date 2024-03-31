@@ -6,7 +6,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\admin\profileContoller;
 use App\Http\Controllers\admin\DaskBoardController;
-use App\Http\Controllers\user\DaskBoardController;
+use App\Http\Controllers\admin\CollegeController;
+// use App\Http\Controllers\user\DaskBoardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +25,9 @@ Route::get('/', function () {
 
 Auth::routes();Route::group(['middleware' => ['role:admin', 'auth']], function () {
     Route::get('admin', [DaskBoardController::class, 'admin'])->name('admin');
+    Route::get('admin/college/index', [CollegeController::class, 'index'])->name('admin/college/index');
+    Route::get('admin/college/create', [CollegeController::class, 'create'])->name('admin/college/create');
+
 
 });
 Route::group(['middleware' => ['role:user', 'auth']], function () {

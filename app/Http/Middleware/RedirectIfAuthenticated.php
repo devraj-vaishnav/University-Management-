@@ -28,7 +28,7 @@ class RedirectIfAuthenticated
                    
          if ($user && $user->hasRole('admin')) {
            
-                 return redirect('admin/index');
+                 return redirect('admin');
                   
           }
              

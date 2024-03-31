@@ -205,7 +205,7 @@
                         <div class="container-fluid">
                             <ul class="nav page-navigation">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index-2.html">
+                                    <a class="nav-link" href="#">
                                         <svg id="icon-home" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box link-icon">
                                             <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
                                             <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
@@ -217,19 +217,11 @@
                                 
 
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <svg id="icon-home-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell link-icon">
-                                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                                        </svg>
-                                        <span class="menu-title">Project</span>
-                                        <i class="menu-arrow"></i></a>
-                                    <div class="submenu">
-                                        <ul class="submenu-item">
-                                            <li class="nav-item"><a class="nav-link" href="project-list.html">Project List</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="project-details.html">Project Details</a></li>
-                                        </ul>
-                                    </div>
+                                    <a href="{{route('admin/college/index')}}" class="nav-link">
+                                       
+                                        <span class="menu-title">College</span>
+                                    </a>
+                                   
                                 </li>
                                 <li class="nav-item mega-menu">
                                     <a href="#" class="nav-link">
