@@ -1,93 +1,99 @@
 
+
 <!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Title -->
+    <meta charset="utf-8" />
     <title>Login </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesdesign" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="{{asset('theme/assets/images/favicon.ico')}}">
 
-    <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.png">
-
-    <link rel="stylesheet" href="{{asset('asset/style.css')}}">
+    <!-- Bootstrap Css -->
+    <link href="{{asset('theme/assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="{{asset('theme/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="{{asset('theme/assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
 
 </head>
 
-<body class="login-area">
-
-   <!-- Preloader -->
-    <div id="preloader">
-        <div class="lds-hourglass"></div>
-    </div>
-
-    <!-- ======================================
-    ******* Page Wrapper Area Start **********
-    ======================================= -->
-    <div class="main-content- bg-overlay-white bg-img h-100vh" style="background-image: url({{asset('asset/img/bg-img/11.jpg')}})">
-        <div class="container h-100">
-            <div class="row h-100 justify-content-center align-items-center">
-                <div class="col-md-7 col-lg-5 mx-auto">
-                    <!-- Middle Box -->
-                    <div class="middle-box">
-                        <div class="card">
-                            <div class="card-body p-4">
-                                <h4 class="font-22">Sign In</h4>
-                                <p class="text-muted mb-4">Sign in to continue.</p>
-
-                                    <form method="POST" action="{{ route('login') }}">
-                                        @csrf
-                                    <div class="form-group">
-                                        <label class="float-left" for="emailaddress">Email address</label>
-                                        <input class="form-control" type="email" id="emailaddress" name="email" value="{{ old('email') }}" placeholder="Enter your email">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <a href="forget-password.html" class="text-muted float-right"><small>Forgot your password?</small></a>
-                                        <label class="float-left" for="password">Password</label>
-                                        <input class="form-control" type="password" required="" name="password" id="password" placeholder="Enter your password">
-                                    </div>
-
-                                    <div class="form-group mb-3">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="checkbox-signin" checked>
-                                            <label class="custom-control-label" for="checkbox-signin">Remember me</label>
+<body class="auth-body-bg">
+<div class="home-btn d-none d-sm-block">
+</div>
+<div>
+    <div class="container-fluid p-0">
+        <div class="row no-gutters">
+            <div class="col-lg-4">
+                <div class="authentication-page-content p-4 d-flex align-items-center min-vh-100">
+                    <div class="w-100">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-9">
+                                <div>
+                                    <div class="text-center">
+                                        <div>
+                                            <h4 class="bold text-warning">UNITECH</h4>
                                         </div>
+
+                                        <h4 class="font-size-18 mt-4">Welcome Back !</h4>
+                                        <p class="text-muted">Sign in to continue to .</p>
                                     </div>
 
-                                    <div class="form-group mb-0 text-center">
-                                        <button class="btn btn-primary btn-block" type="submit"> Log In </button>
+                                    <div class="p-2 mt-5">
+                                        <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                                            @csrf
+                                            <div class="form-group auth-form-group-custom mb-4">
+                                                <i class="ri-user-2-line text-warning auti-custom-input-icon"></i>
+                                                <label for="username">Email</label>
+                                                <input type="email" class="form-control" value="{{old('email')}}" name="email" id="username" placeholder="Enter Email ">
+                                                <span class="text-danger">{{$errors->first('email')}}</span>
+                                            </div>
+
+                                            <div class="form-group auth-form-group-custom mb-4">
+                                                <i class="ri-lock-2-line bg-color text-warning auti-custom-input-icon" ></i>
+                                                <label for="userpassword">Password</label>
+                                                <input type="password" name="password" class="form-control" id="userpassword" placeholder="Enter password">
+                                                <span class="text-danger">{{$errors->first('password')}}</span>
+                                            </div>
+
+                                            <div class="mt-4 text-center">
+                                                <button class="btn btn-warning w-md waves-effect waves-light" type="submit">Log In</button>
+                                            </div>
+                                        </form>
                                     </div>
 
-                                </form>
-                            </div> <!-- end card-body -->
+
+                                </div>
+
+                            </div>
                         </div>
-                        <!-- end card -->
                     </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="authentication-bg">
+                    <div class="bg-overlay"></div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- ======================================
-    ********* Page Wrapper Area End ***********
-    ======================================= -->
 
-    <!-- Must needed plugins to the run this Template -->
-    <script src="{{asset('asset/js/jquery.min.js')}}"></script>
-    <script src="{{asset('asset/js/popper.min.js')}}"></script>
-    <script src="{{asset('asset/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('asset/js/bundle.js')}}"></script>
 
-    <!-- Active JS -->
-    <script src="{{asset('asset/js/default-assets/active.js')}}"></script>
+<!-- JAVASCRIPT -->
+<script src="{{asset('theme/assets/libs/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('theme/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('theme/assets/libs/metismenu/metisMenu.min.js')}}"></script>
+<script src="{{asset('theme/assets/libs/simplebar/simplebar.min.js')}}"></script>
+<script src="{{asset('themeassets/libs/node-waves/waves.min.js/')}}"></script>
+
+<script src="{{asset('theme/assets/js/app.js')}}"></script>
 
 </body>
 
-
-<!-- Mirrored from demo.riktheme.com/xvito/top-menu-modren/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 26 Aug 2023 05:18:55 GMT -->
 </html>

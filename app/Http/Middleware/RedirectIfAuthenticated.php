@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Middleware;
-use App\Http\Controllers\Controller;
 
 use App\Providers\RouteServiceProvider;
 use Closure;
@@ -21,27 +20,16 @@ class RedirectIfAuthenticated
         $guards = empty($guards) ? [null] : $guards;
 
         foreach ($guards as $guard) {
-    
             if (Auth::guard($guard)->check()) {
-          
-              $user = Auth::user();
-                   
-         if ($user && $user->hasRole('admin')) {
-           
-                 return redirect('admin');
-                  
-          }
-             
-    
-           if ($user && $user->hasRole('user')) {
-                  
-          return redirect('user');
-           
-             }
-               
-         }
-          
-         }
+                $user = Auth::user();
+                if ($user && $user->hasRole('admin')) {
+                    return redirect('admin/home');
+                }
+                if ($user && $user->hasRole('employee')) {
+                    return redirect('employee/index');
+                }
+            }
+        }
 
         return $next($request);
     }
